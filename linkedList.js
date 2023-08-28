@@ -90,6 +90,43 @@ const LinkedList = () => {
       }
       return str + "null";
     },
+
+    insertAt: (value, index) => {
+      if (index < 0 || index > size) return; // Invalid index
+      const newNode = Node(value);
+      if (index === 0) {
+        // Inserting at the beginning
+        newNode.setNext(head);
+        head = newNode;
+        if (!tail) tail = newNode; // If list was empty
+      } else {
+        let current = head;
+        for (let i = 0; i < index - 1; i++) {
+          current = current.getNext();
+        }
+        newNode.setNext(current.getNext());
+        current.setNext(newNode);
+        if (index === size) tail = newNode; // Inserting at the end
+      }
+      size++;
+    },
+
+    removeAt: (index) => {
+      if (index < 0 || index >= size) return; // Invalid index
+      if (index === 0) {
+        // Removing the first node
+        head = head.getNext();
+        if (!head) tail = null; // If list becomes empty
+      } else {
+        let current = head;
+        for (let i = 0; i < index - 1; i++) {
+          current = current.getNext();
+        }
+        current.setNext(current.getNext().getNext());
+        if (index === size - 1) tail = current; // Removing the last node
+      }
+      size--;
+    },
   };
 };
 
