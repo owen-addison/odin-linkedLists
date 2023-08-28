@@ -1,9 +1,8 @@
-const Node = (value) => {
+const Node = (value = null) => {
   let nextNode = null;
 
   return {
-    value: null,
-    nextNode: null,
+    value, // Use the passed value directly
     getNext: () => nextNode,
     setNext: (node) => {
       nextNode = node;
