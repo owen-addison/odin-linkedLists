@@ -1,6 +1,7 @@
 {
   "name": "odin-linkedlists",
   "version": "1.0.0",
+  "type": "module",
   "description": "# JavaScript Linked Lists",
   "main": "index.js",
   "scripts": {
