@@ -34,3 +34,27 @@ console.log(list.contains(3)); // Expected output: false
 // Test finding the index of a node with a specific value
 console.log(list.find(1)); // Expected output: 1
 console.log(list.find(3)); // Expected output: null
+
+// Test inserting a node at a specific index
+list.insertAt(0.5, 1);
+console.log(list.toString()); // Expected output: ( 0 ) -> ( 0.5 ) -> ( 1 ) -> ( 2 ) -> null
+
+// Test removing a node at a specific index
+list.removeAt(2);
+console.log(list.toString()); // Expected output: ( 0 ) -> ( 0.5 ) -> ( 2 ) -> null
+
+// Test inserting a node at the beginning
+list.insertAt(-1, 0);
+console.log(list.toString()); // Expected output: ( -1 ) -> ( 0 ) -> ( 0.5 ) -> ( 2 ) -> null
+
+// Test inserting a node at the end
+list.insertAt(3, 4);
+console.log(list.toString()); // Expected output: ( -1 ) -> ( 0 ) -> ( 0.5 ) -> ( 2 ) -> ( 3 ) -> null
+
+// Test removing a node at the beginning
+list.removeAt(0);
+console.log(list.toString()); // Expected output: ( 0 ) -> ( 0.5 ) -> ( 2 ) -> ( 3 ) -> null
+
+// Test removing a node at the end
+list.removeAt(3);
+console.log(list.toString()); // Expected output: ( 0 ) -> ( 0.5 ) -> ( 2 ) -> null
